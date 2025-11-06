@@ -1,0 +1,52 @@
+package com.mycompany.aplikasikasir;
+
+import java.util.Scanner;
+
+public class AplikasiKasir {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+                String[] Lanjut = {
+            "Kung Fu Panda 4",
+            "Frozen 3",
+            "Deadpool & Wolverine",
+            "Joker"
+        };
+
+        int hargaTiket = 70000;
+        int pilihan, jumlahTiket;
+        String namaPemesan, metodePembayaran;
+
+        System.out.println("=== SELAMAT DATANG DI BIOSKOP  XXI ===");
+        System.out.println("Daftar Film Hari Ini:");
+        for (int i = 0; i < Lanjut.length; i++) {
+            System.out.println((i + 1) + ". " + Lanjut[i]);
+        }
+
+        System.out.print("\nPilih nomor film yang ingin ditonton: ");
+        pilihan = input.nextInt();
+
+        System.out.print("Masukkan jumlah tiket yang ingin dipesan: ");
+        jumlahTiket = input.nextInt();
+        input.nextLine();
+
+        System.out.print("Masukkan nama pemesan: ");
+        namaPemesan = input.nextLine();
+
+        System.out.print("Pilih metode pembayaran (Cash / E-Wallet / Debit): ");
+        metodePembayaran = input.nextLine();
+
+        int totalBayar = hargaTiket * jumlahTiket;
+
+        System.out.println("\n===== STRUK PEMESANAN TIKET BIOSKOP =====");
+        System.out.println("Nama Pemesan      : " + namaPemesan);
+        System.out.println("Film Ditonton     : " + Lanjut[pilihan - 1]);
+        System.out.println("Jumlah Tiket      : " + jumlahTiket);
+        System.out.println("Harga per Tiket   : Rp" + hargaTiket);
+        System.out.println("Total Bayar       : Rp" + totalBayar);
+        System.out.println("Metode Pembayaran : " + metodePembayaran);
+        System.out.println("==========================================");
+        System.out.println("Terima kasih sudah memesan tiket di XXI!");
+        System.out.println("Selamat menonton ");
+    }
+}
